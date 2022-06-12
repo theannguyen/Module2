@@ -1,18 +1,15 @@
-package ThucHanh6;
+package BaiTap6;
 
-public class Circle extends Shape {
-    private double radius = 1.0;
+public class Circle {
+    private double radius = 3.5;
+    private String color = "red";
+
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
+    }
 
     public Circle() {
-    }
-
-    public Circle(double radius) {
-        this.radius = radius;
-    }
-
-    public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
-        this.radius = radius;
     }
 
     public double getRadius() {
@@ -23,32 +20,19 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public double getArea() {
-        return radius * radius * Math.PI;
+        return this.radius*this.radius*Math.PI;
     }
 
-    public double getPerimeter() {
-        return 2 * radius * Math.PI;
-    }
-
-    @Override
-    public String toString() {
-        return "A Circle with radius ="
-                + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
-    }
-
-    public static class CircleTest {
-        public static void main(String[] args) {
-            Circle circle = new Circle();
-            System.out.println(circle);
-
-            circle = new Circle(3.5);
-            System.out.println(circle);
-
-            circle = new Circle(3.5, "indigo", false);
-            System.out.println(circle);
-        }
+    public double getPerimeter(){
+        return 2*Math.PI*this.radius;
     }
 }
